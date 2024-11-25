@@ -1,13 +1,15 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [],
+  imports: [CommonModule,RouterLink],
   template: `<h1>HELLO</h1>
   <br>
   <div class="">
-    {{date}}
+    {{birthDate | date:"d,MMMM,YYYY"}}
 </div>
   
   `,
@@ -17,7 +19,7 @@ export class HomeComponent {
 
   title ='home';
 
-  date =new Date ();
+  birthDate =new Date ();
 
 }
 
